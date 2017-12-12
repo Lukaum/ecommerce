@@ -1,0 +1,1 @@
+O namespace Hcode é tirado do composer.json, ou seja, nesse arquivo tem o psr-4 que pega todo o caminho do vendor em diante (vendor/hcodenr/php-clases/src), então só precisa chamar namespace Hcode pra ele pegar esse caminho
