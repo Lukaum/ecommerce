@@ -6,6 +6,7 @@ require_once("vendor/autoload.php");
 //Namespaces - dentro do vendor eu tenho dezenas de classes
 use \Slim\Slim;
 use \Hcode\Page;
+use \Hcode\PageAdmin;
 
 //Configurado e chamando o slim - nova aplicação para as rotas (mando o nome para a url e ele me manda para algum lugar)
 $app = new Slim();
@@ -21,6 +22,16 @@ $app->get('/', function() {
 	$page->setTpl("index");
 
 });
+
+//Rota admin
+$app->get('/admin', function() {
+
+	$page = new PageAdmin();
+
+	$page->setTpl("index");
+
+});
+
 
 $app->run();
 
