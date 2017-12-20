@@ -1,0 +1,1 @@
+O método estático não preciso instanciar a classe lá no index.php, porém não posso utilizar a pseudo-variável $this

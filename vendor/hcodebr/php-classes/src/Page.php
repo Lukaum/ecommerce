@@ -14,6 +14,7 @@ class Page {
 		"data"=>[]
 	];
 
+	//Método Mágico construtor
 	public function __construct($opts = array(), $tpl_dir = "/views/"){
 
 		//array merge mescla 2 arrays - O último sempre sobrescreve os anteriores
@@ -40,7 +41,7 @@ class Page {
 	private function setData($data = array())
 	{
 
-		foreach ($this->options["data"] as $key => $value) {
+		foreach ($data as $key => $value) {
 			//Variáveis que vão pegar no template
 			$this->tpl->assign($key, $value);
 		}
@@ -56,6 +57,7 @@ class Page {
 
 	}
 
+	//Método Mágico destrutor
 	public function __destruct(){
 
 		//Se for footer padrão ele entra na condição

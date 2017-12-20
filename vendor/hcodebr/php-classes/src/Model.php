@@ -23,10 +23,10 @@ class Model {
 		{
 
 			//somente retorna o valor contido no fieldName
+			//isset verifica se ja foi definido, caso sim ele retorna, caso não retorna null
 			case "get":
-				return $this->values[$fieldName];
+				return (isset($this->values[$fieldName])) ? $this->values[$fieldName] : NULL;
 			break;
-			
 			//Args pega o valor
 			case "set":
 				$this->values[$fieldName] = $args[0];
@@ -42,6 +42,7 @@ class Model {
 		foreach ($data as $key => $value) {
 
 			//Como estou criando dinamicamente(então o id usuário teria que ter um get e um set), então por isso tenho que colocar em {""}
+			//ele cria o set de cada elemento HTML "name" passado por POST
 			$this->{"set".$key}($value);
 
 		}
